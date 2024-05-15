@@ -25,6 +25,9 @@ import Header from '../components/Header';
 import IntlProvider from '../components/IntlProvider';
 import MissedPage from '../components/MissedPage';
 import SearchParamsConfigurator from '../components/SearchParamsConfigurator';
+import {films} from "constants/pages";
+import FilmDetail from "../../pages/film-detail";
+import FilmList from "../../pages/film-list";
 
 function App() {
   const dispatch = useDispatch();
@@ -120,6 +123,14 @@ function App() {
                         />
                       )}
                       path="*"
+                    />
+                    <Route
+                        element={<FilmList/>}
+                        path={'/films'}
+                        />
+                    <Route
+                        element={<FilmDetail/>}
+                        path={'/films/:id'}
                     />
                   </Routes>
                 )}
